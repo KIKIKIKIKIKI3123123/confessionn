@@ -1,0 +1,891 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f5">
+
+<title>Для Айм ♡</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink: #e9a9bd;
+  --dark: #ad6683;
+  --light: #fff7fa;
+  --text: #795665;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--light);
+  color: var(--text);
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+}
+
+header {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px 20px;
+  position: relative;
+  background:
+    linear-gradient(#fff0f5a6, #fff0f5d9),
+    url('mylove.jpeg') center 35% / cover no-repeat;
+}
+
+.hero {
+  max-width: 700px;
+  animation: appear 1.5s ease;
+}
+
+.eyebrow {
+  letter-spacing: 5px;
+  font-size: 11px;
+  color: var(--dark);
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  color: #b76c8a;
+  font-size: clamp(75px, 15vw, 130px);
+  font-weight: 400;
+}
+
+.hero p {
+  font-size: 14px;
+  line-height: 2;
+  margin: 20px auto 30px;
+  max-width: 450px;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 30px;
+  background: #d991ad;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+  transition: .3s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #bd708f;
+  transform: translateY(-3px);
+}
+
+.signature {
+  margin-top: 25px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--dark);
+}
+
+section {
+  padding: 85px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 58px;
+  font-weight: 400;
+  color: #bd7894;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 13px;
+  line-height: 1.9;
+  margin: 0 auto 40px;
+  max-width: 500px;
+  color: #987987;
+}
+
+/* PHOTO GALLERY */
+
+.gallery-section {
+  background: #fff0f5;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.photo {
+  background: white;
+  padding: 12px 12px 25px;
+  box-shadow: 0 8px 30px #c989a522;
+  transform: rotate(var(--angle));
+  transition: .4s;
+  border-radius: 4px;
+}
+
+.photo:hover {
+  transform: rotate(0) translateY(-10px) scale(1.03);
+}
+
+.photo img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
+
+.photo p {
+  font-family: 'Great Vibes', cursive;
+  font-size: 27px;
+  color: var(--dark);
+  padding-top: 12px;
+}
+
+/* REASONS */
+
+.reasons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.reason {
+  padding: 30px 20px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px #c989a515;
+  transition: .3s;
+}
+
+.reason:hover {
+  transform: translateY(-7px);
+}
+
+.reason span {
+  font-size: 35px;
+}
+
+.reason h3 {
+  margin: 15px 0 10px;
+  color: #bd7894;
+  font-size: 16px;
+}
+
+.reason p {
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* QUIZ */
+
+.questions {
+  background: #fceaf0;
+}
+
+.quiz {
+  max-width: 550px;
+  margin: auto;
+  padding: 35px 25px;
+  background: white;
+  border-radius: 25px;
+  box-shadow: 0 10px 35px #c989a522;
+}
+
+#question {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  color: var(--dark);
+}
+
+.answers {
+  display: grid;
+  gap: 12px;
+}
+
+.answer {
+  padding: 14px;
+  background: #fff3f7;
+  border: 1px solid #f4d4e0;
+  color: #94667a;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: .2s;
+  font-size: 13px;
+}
+
+.answer:hover {
+  background: #f5dce7;
+  transform: scale(1.02);
+}
+
+#feedback {
+  margin-top: 20px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* LETTER */
+
+.letter-section {
+  background: white;
+}
+
+.envelope {
+  width: min(320px, 90%);
+  height: 200px;
+  background: #f1c7d6;
+  margin: 40px auto;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: .4s;
+  box-shadow: 0 10px 35px #c989a533;
+}
+
+.envelope span {
+  font-size: 65px;
+}
+
+.envelope:hover {
+  transform: scale(1.04) rotate(-2deg);
+}
+
+#letter {
+  display: none;
+  max-width: 580px;
+  margin: 30px auto;
+  padding: 35px 25px;
+  background: #fff5f8;
+  border: 1px solid #f4d4e0;
+  border-radius: 18px;
+  line-height: 2.1;
+}
+
+#letter.show {
+  display: block;
+  animation: appear .8s;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 65px 20px;
+  text-align: center;
+  background: #f9e5ed;
+}
+
+footer h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 55px;
+  color: #bd7894;
+  font-weight: 400;
+}
+
+footer p {
+  font-size: 12px;
+  margin-top: 15px;
+  line-height: 1.8;
+}
+
+/* HEART ANIMATION */
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  color: #e49bb6;
+  pointer-events: none;
+  animation: floatUp 7s linear forwards;
+  z-index: 10;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* PHOTO FULLSCREEN */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #24151dcc;
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.lightbox.show {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 95%;
+  max-height: 85vh;
+  object-fit: contain;
+  border: 7px solid white;
+  border-radius: 5px;
+}
+
+.lightbox button {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+@media(max-width: 650px) {
+  header {
+    min-height: 90vh;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    max-width: 340px;
+    gap: 25px;
+  }
+
+  .photo img {
+    height: 370px;
+  }
+
+  .reasons {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 65px 16px;
+  }
+
+  .section-title {
+    font-size: 48px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MAIN PAGE -->
+
+<header>
+  <div class="hero">
+
+    <div class="eyebrow">
+      A LITTLE SURPRISE FOR YOU
+    </div>
+
+    <h1>Айм ♡</h1>
+
+    <p>
+      Есть люди, которых приятно вспоминать,
+      даже если они уже не рядом.
+      Ты именно такой человек.
+    </p>
+
+    <a href="#about" class="btn">
+      Открыть моё послание ♡
+    </a>
+
+    <div class="signature">
+      ОТ БЫВШЕГО КОЛЛЕГИ
+    </div>
+
+  </div>
+</header>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <h2 class="section-title">
+    Немного о тебе
+  </h2>
+
+  <p class="subtitle">
+    Этот маленький уголок интернета посвящён тебе.
+    Просто потому, что ты заслуживаешь
+    приятных моментов.
+  </p>
+
+  <h2 style="
+    font-family:'Great Vibes';
+    font-size:45px;
+    color:#bd7894;
+  ">
+    Ты прекрасна по-своему ♡
+  </h2>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="gallery-section">
+
+  <h2 class="section-title">
+    Моя любимая галерея
+  </h2>
+
+  <p class="subtitle">
+    Три фотографии, которые делают эту страницу
+    ещё более особенной.
+  </p>
+
+  <div class="gallery">
+
+    <div class="photo" style="--angle:-3deg">
+      <img
+        src="mylove.jpeg"
+        alt="Айм — фотография 1"
+        onclick="showPhoto(this.src)"
+      >
+      <p>Прекрасная улыбка ♡</p>
+    </div>
+
+    <div class="photo" style="--angle:2deg">
+      <img
+        src="mylove2.jpeg"
+        alt="Айм — фотография 2"
+        onclick="showPhoto(this.src)"
+      >
+      <p>Особенный человек</p>
+    </div>
+
+    <div class="photo" style="--angle:-2deg">
+      <img
+        src="mylove3.jpeg"
+        alt="Айм — фотография 3"
+        onclick="showPhoto(this.src)"
+      >
+      <p>Просто Айм ♡</p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- REASONS -->
+
+<section>
+
+  <h2 class="section-title">
+    Несколько причин
+  </h2>
+
+  <p class="subtitle">
+    Почему ты заслуживаешь улыбки сегодня.
+  </p>
+
+  <div class="reasons">
+
+    <div class="reason">
+      <span>🌷</span>
+      <h3>Твоя доброта</h3>
+      <p>
+        В тебе есть что-то очень тёплое
+        и искреннее.
+      </p>
+    </div>
+
+    <div class="reason">
+      <span>✨</span>
+      <h3>Твоя особенность</h3>
+      <p>
+        Ты человек, которого приятно помнить.
+      </p>
+    </div>
+
+    <div class="reason">
+      <span>💗</span>
+      <h3>Твоя улыбка</h3>
+      <p>
+        Она способна сделать чей-то день лучше.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- QUESTIONS -->
+
+<section class="questions">
+
+  <h2 class="section-title">
+    Немного вопросов
+  </h2>
+
+  <p class="subtitle">
+    А теперь небольшая игра для тебя ♡
+  </p>
+
+  <div class="quiz">
+
+    <h3 id="question">
+      Как думаешь, зачем создан этот сайт?
+    </h3>
+
+    <div class="answers" id="answers">
+
+      <button class="answer" onclick="respond(0)">
+        Чтобы напомнить о себе 😄
+      </button>
+
+      <button class="answer" onclick="respond(1)">
+        Чтобы подарить улыбку 🌷
+      </button>
+
+      <button class="answer" onclick="respond(2)">
+        Просто так, без повода 💗
+      </button>
+
+    </div>
+
+    <p id="feedback"></p>
+
+    <button
+      class="btn"
+      id="next"
+      style="display:none;margin-top:20px"
+      onclick="nextQuestion()"
+    >
+      Следующий вопрос →
+    </button>
+
+  </div>
+
+</section>
+
+<!-- LETTER -->
+
+<section class="letter-section">
+
+  <h2 class="section-title">
+    Маленькое письмо
+  </h2>
+
+  <p class="subtitle">
+    Я оставил для тебя кое-что.
+    Нажми на конверт, чтобы открыть.
+  </p>
+
+  <div class="envelope" onclick="openLetter()">
+    <span>💌</span>
+  </div>
+
+  <div id="letter">
+
+    <h2 style="
+      font-family:'Great Vibes';
+      font-size:40px;
+      color:#bd7894;
+    ">
+      Дорогая Айм...
+    </h2>
+
+    <p style="margin-top:20px">
+
+      Спасибо, что ты есть.
+
+      <br><br>
+
+      Иногда люди приходят в нашу жизнь,
+      и даже самые обычные моменты
+      с ними остаются в памяти надолго.
+
+      <br><br>
+
+      Возможно, мы больше не коллеги,
+      но это не значит, что нужно забывать
+      хороших людей.
+
+      <br><br>
+
+      Я просто хотел сказать,
+      что скучаю по тебе, Досым!
+
+      <br><br>
+
+      Береги себя и почаще улыбайся.
+
+      <br><br>
+
+      <span style="
+        font-family:'Great Vibes';
+        font-size:35px;
+        color:#bd7894;
+      ">
+        От бывшего коллеги ♡
+      </span>
+
+    </p>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <h2>До скорой встречи, Айм ♡</h2>
+
+  <p>
+    Пусть в твоей жизни всегда будет
+    много цветов, счастья и улыбок.
+  </p>
+
+  <p style="margin-top:30px;color:#bd7894">
+    Made with love ♡
+  </p>
+
+</footer>
+
+<!-- FULLSCREEN PHOTO -->
+
+<div class="lightbox" id="lightbox" onclick="closePhoto()">
+
+  <button onclick="closePhoto()">×</button>
+
+  <img id="fullPhoto" src="" alt="Фотография Айм">
+
+</div>
+
+<script>
+
+// QUESTIONS
+
+const questions = [
+  {
+    q: "Как думаешь, зачем создан этот сайт?",
+    a: [
+      "Чтобы напомнить о себе 😄",
+      "Чтобы подарить улыбку 🌷",
+      "Просто так 💗"
+    ],
+    f: "Правильный ответ — все три! ❤️"
+  },
+  {
+    q: "Чего я хочу пожелать тебе?",
+    a: [
+      "Счастья и улыбок 🌸",
+      "Много путешествий ✈️",
+      "Всего самого прекрасного 💗"
+    ],
+    f: "Всё самое прекрасное — именно тебе!"
+  },
+  {
+    q: "А знаешь, что самое главное?",
+    a: [
+      "Никогда не грустить",
+      "Оставаться собой",
+      "Не забывать улыбаться"
+    ],
+    f: "Оставайся собой. Ты замечательная! 🌷"
+  }
+];
+
+let current = 0;
+
+// ANSWER
+
+function respond(index) {
+
+  document.getElementById("feedback").textContent =
+    questions[current].f;
+
+  document.getElementById("answers").style.display =
+    "none";
+
+  document.getElementById("next").style.display =
+    "inline-block";
+}
+
+// NEXT QUESTION
+
+function nextQuestion() {
+
+  current++;
+
+  if (current >= questions.length) {
+
+    document.getElementById("question").textContent =
+      "И последнее... Ты улыбнулась? ❤️";
+
+    document.getElementById("answers").innerHTML = `
+      <button class="answer" onclick="finish()">
+        Да! 😊
+      </button>
+      <button class="answer" onclick="finish()">
+        Конечно! 💗
+      </button>
+    `;
+
+    document.getElementById("answers").style.display =
+      "grid";
+
+    document.getElementById("feedback").textContent = "";
+
+    document.getElementById("next").style.display =
+      "none";
+
+    return;
+  }
+
+  const item = questions[current];
+
+  document.getElementById("question").textContent =
+    item.q;
+
+  document.getElementById("answers").innerHTML =
+    item.a.map((answer, index) => `
+      <button class="answer" onclick="respond(${index})">
+        ${answer}
+      </button>
+    `).join("");
+
+  document.getElementById("answers").style.display =
+    "grid";
+
+  document.getElementById("feedback").textContent = "";
+
+  document.getElementById("next").style.display =
+    "none";
+}
+
+// FINISH QUIZ
+
+function finish() {
+
+  document.getElementById("question").textContent =
+    "Вот и отлично! Береги свою улыбку, Айм! 💗";
+
+  document.getElementById("answers").style.display =
+    "none";
+
+  document.getElementById("feedback").textContent =
+    "Отправляю тебе миллион виртуальных объятий! 🌷";
+}
+
+// OPEN LETTER
+
+function openLetter() {
+
+  document.getElementById("letter")
+    .classList.add("show");
+
+  document.getElementById("letter")
+    .scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+
+}
+
+// FLOATING HEARTS
+
+function createHeart() {
+
+  const heart = document.createElement("div");
+
+  heart.className = "heart";
+
+  heart.textContent = ["♡", "♥", "🌸", "💗"][
+    Math.floor(Math.random() * 4)
+  ];
+
+  heart.style.left = Math.random() * 100 + "vw";
+
+  heart.style.fontSize =
+    (15 + Math.random() * 20) + "px";
+
+  heart.style.animationDuration =
+    (5 + Math.random() * 5) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 10000);
+
+}
+
+setInterval(createHeart, 900);
+
+// PHOTO VIEWER
+
+function showPhoto(src) {
+
+  document.getElementById("fullPhoto").src = src;
+
+  document.getElementById("lightbox")
+    .classList.add("show");
+
+}
+
+function closePhoto() {
+
+  document.getElementById("lightbox")
+    .classList.remove("show");
+
+}
+
+document.addEventListener("keydown", (event) => {
+
+  if (event.key === "Escape") {
+    closePhoto();
+  }
+
+});
+
+</script>
+
+</body>
+</html>
